@@ -6,8 +6,8 @@
 ## Part 1 Answers
 
 1. Command to make a directory named `DirA`: mkdir DirA
-3. Command to make a directory named `Dir B`: mkdir DirB
-4. Command to go into / open the `Dir B` directory: cd DirB
+3. Command to make a directory named `Dir B`: mkdir Dir B
+4. Command to go into / open the `Dir B` directory: cd Dir B
 5. Is `DirA` or `Dir B` a better name?  Defend: 'DirA' is better. 'Dir B' has a space that can make accessing files more complicated. Further, a space separates a command, so this would be an issue.
 6. Command to rename `Dir B` to `DirB`: mv Dir B DirB
 
