@@ -12,8 +12,11 @@
 5. `~/.ssh/config` contents: port 22
 
 ```
-Paste your config file entry here.  By placing it between these 
-triple quote sets GitHub will make this look like a block of code
+Host 2350
+      HostName: 98.82.48.190
+      User: ubuntu
+      IdentityFile: ~/ceg2350.pem
+      ~/.ssh/config contents: Port 22
 ```
 
 6. `ssh` command after configuring an entry in the `config` file: ssh 2350
