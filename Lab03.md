@@ -24,9 +24,9 @@ Host 2350
 ## Part 2 Answers
 
 1. `printenv HOME > thishouse`
-   - Explanation: 
+   - Explanation: The "printenv" command displays the values of environment variables. In this case, the environment variable is HOME. This whole command simply displays the value of the HOME variable and outputs it to the file 'thisHouse'.
 2. `cat doesnotexist 2>> hush.txt`
-   - Explanation: 
+   - Explanation: The "2>>" command has the job of redirecting any error output and giving it to the subsequent file. In this case, that file would be the "hush.txt" file. Interestingly, there are two types of output; the 1 is represented by standard output; and the 2 is represented by error output. The operator '>>' attaches the error output to a file (hush.txt). In short, this command reads the 'doesnotexist' file and possible errors will be redirected and outputted to hush.txt.
 3. `cat nums.txt | sort -n >> all_nums.txt`
    - Explanation: 
 4. `cat << "DONE" > here.txt`
