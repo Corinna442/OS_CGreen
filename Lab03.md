@@ -28,7 +28,7 @@ Host 2350
 2. `cat doesnotexist 2>> hush.txt`
    - Explanation: The "2>>" command has the job of redirecting any error output and giving it to the subsequent file. In this case, that file would be the "hush.txt" file. Interestingly, there are two types of output; the 1 is represented by standard output; and the 2 is represented by error output. The operator '>>' attaches the error output to a file (hush.txt). In short, this command reads the 'doesnotexist' file and possible errors will be redirected and outputted to hush.txt.
 3. `cat nums.txt | sort -n >> all_nums.txt`
-   - Explanation: 
+   - Explanation: the 'cat num.txt' command will read out the contents of the text file. The '|' operator then takes the contents of the 'nums.txt' file and sends it as input to 
 4. `cat << "DONE" > here.txt`
    - Explanation: 
 5. `ls -lt ~ | head`
