@@ -1,0 +1,6 @@
+minNumRoll=1
+maxNumRoll=20
+
+randomNumRoll=$((RANDOM % (maxNumRoll - minNumRoll + 1) + minNumRoll))
+
+echo "Here is a random number between 1 and 20: $randomNumRoll"
