@@ -5,18 +5,28 @@
 
 #echo "Here is a random number between 1 and 20: $randomNumRoll"
 
-echo "Enter a random number: "
+#echo "Enter a random number: "
 
-read userNum
-#minNumRoll=1
-#randomRoll=$((RANDOM % (userNum - minNumRoll + 1) + minNumRoll)"
+#read userNum
 
-if [ userNum -lt 1 ]; then
-	echo "Error: input must be greater than 1."
-else
-	random_number=$((RANDOM % userNum + 1))
-	echo "Your number between 1 and $userNum is: $random_number"
+#if [ userNum -lt 1 ]; then
+#	echo "Error: input must be greater than 1."
+#else
+#	randomNumber=$((RANDOM % userNum + 1))
+#	echo "Your number between 1 and $userNum is: $randomNumber"
 
+#fi
+
+if [ -z "$1" ]; then
+	echo "Error: you must pass an argument"
+	exit 1
 fi
- 
+
+if [ $1 -lt 1 ]; then
+        echo "Error: input must be greater than 1."
+	exit 1
+fi
+
+randomNum=$((RANDOM % $1 + 1))
+echo "Random number between 1 and $1: $randomNum" 
 
