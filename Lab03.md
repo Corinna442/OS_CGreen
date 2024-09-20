@@ -28,13 +28,13 @@ Host 2350
 2. `cat doesnotexist 2>> hush.txt`
    - Explanation: The "2>>" command has the job of redirecting any error output and giving it to the subsequent file. In this case, that file would be the "hush.txt" file. Interestingly, there are two types of output; the 1 is represented by standard output; and the 2 is represented by error output. The operator '>>' attaches the error output to a file (hush.txt). In short, this command reads the 'doesnotexist' file and possible errors will be redirected and outputted to hush.txt.
 3. `cat nums.txt | sort -n >> all_nums.txt`
-   - Explanation: the 'cat num.txt' command will read out the contents of the text file. The '|' operator then takes the contents of the 'nums.txt' file and sends it as input to 
+   - Explanation: the 'cat num.txt' command will read out the contents of the text file. The '|' operator then takes the contents of the 'nums.txt' file and sends it as input to the next command, which would be 'sort -n'. The 'sort -n' command basically sorts the input in numerical order. The sorted output will go to 'all_nums.txt'.
 4. `cat << "DONE" > here.txt`
-   - Explanation: 
+   - Explanation: The command '<< "DONE"' takes input from the cat command to the here.txt file and gets everything until the word "DONE" is inputted.
 5. `ls -lt ~ | head`
-   - Explanation: 
+   - Explanation: The 'head' command is meant to display the first 10 lines of output. So, in this case, this whole command will list the first 10 files in the home directory (~), which will display the sorted details of these files (ls -lt).
 6. `history | grep ".md"`
-   - Explanation: 
+   - Explanation: The "grep" command will search in all of the files labeled with ".md" in the history command.
 
 ## Part 3
 
