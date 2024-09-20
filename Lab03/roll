@@ -1,6 +1,22 @@
-minNumRoll=1
-maxNumRoll=20
+#minNumRoll=1
+#maxNumRoll=20
 
-randomNumRoll=$((RANDOM % (maxNumRoll - minNumRoll + 1) + minNumRoll))
+#randomNumRoll=$((RANDOM % (maxNumRoll - minNumRoll + 1) + minNumRoll))
 
-echo "Here is a random number between 1 and 20: $randomNumRoll"
+#echo "Here is a random number between 1 and 20: $randomNumRoll"
+
+echo "Enter a random number: "
+
+read userNum
+#minNumRoll=1
+#randomRoll=$((RANDOM % (userNum - minNumRoll + 1) + minNumRoll)"
+
+if [ userNum -lt 1 ]; then
+	echo "Error: input must be greater than 1."
+else
+	random_number=$((RANDOM % userNum + 1))
+	echo "Your number between 1 and $userNum is: $random_number"
+
+fi
+ 
+
