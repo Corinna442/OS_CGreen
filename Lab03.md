@@ -43,30 +43,30 @@ Verify that `roll` made it to your GitHub repository for this course and is in y
 ## Part 4 - Retrospective Answers
 
 1. Where and when did it go wrong while working on your script tasks?
-> Your reflection here
+> I had many problems when writing the code in bash. Many of the problems included making errors because I had left something out or missed some correct spacing. Other problems I encountered were logical errors when getting my loops to run, at one point the while loop was not acting as a loop! This was challenging in that it was a new language I was learning and had to work with.
 2. Was anything familiar working with a new language compared to one you are used to?
-> Your reflection here
-3. Did you write good `commit` messages that refer to what tasks were completed at each commit?  What would you improve?
-> Your reflection here
+> Yes! I am used to the language java. Some of similarities were the for and while loops, if statements, and the operators like && and ||.
+3. Did you write good `commit` messages that refer to what tasks were completed at each commit?  What would you improve? 
+> I would say I wrote good commit messages for each commit by labeling them numbers 1-6. Although, I could improve by making a more detailed description of what I had changed each time I saved my commits.
 
 ## Part 5 Answers
 
-1. PATH =
-2. To set condition to `true`, I need to...
-3. Command(s):
-4. PATH =
-   - Difference:
-5. Command(s):
-6. Commands & modification explanations: 
+1. PATH = echo $PATH
+2. To set condition to `true`, I need to make sure I have/create a directory. I called mine 'scripts'.
+3. Command(s): mkdir ~/scripts
+4. PATH = /home/ubuntu/OS_CGreen/scripts:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin 
+   - Difference: 'scripts' was added in the path.
+5. Command(s): cp ~/roll ~/scripts/
+6. Commands & modification explanations: chmod +x ~/scripts/roll
 7. Script permission breakdown
    - User
-      - must be:
-      - has permissions to:
+      - must be: The user/owner
+      - has permissions to: run the script
    - Group
-      - must be:
-      - has permissions to:
+      - must be: all members of a file
+      - has permissions to: execute the script
    - Other
-      - has permissions to:
+      - has permissions to: read the script
 
 ## Extra Credit
 
