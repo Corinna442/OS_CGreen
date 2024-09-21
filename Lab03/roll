@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #minNumRoll=1
 #maxNumRoll=20
 
@@ -44,10 +46,9 @@ echo "Die number: $dieNum Die Sides: $dieSides"
 else
 echo "Error: Values must be numbers"
 fi
-done
 
-for ((i=1; i<=dieNum; i++)); do
+for ((i=1; i<=dieNum; i++)) do
 dieRoll=$((RANDOM % dieSides + 1))
 echo "Die $i rolled a $dieRoll"
 done
-
+done
