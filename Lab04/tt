@@ -1,0 +1,116 @@
+#!/bin/bash
+
+var1=$1
+var2=$2
+
+#Create User guide
+user_guide() {
+	echo "Taks Tracker User Guide:"
+	echo "Usage: ./tt [add, complete, view, clear, help]"
+	echo "Here are the actions: "
+	echo "add : Adds a task. Needs a task description."
+
+}
+
+#first function for add
+add() {
+	if [[ $# -ne 2 ]]; then
+		echo "Invalid arguments. Must have two arguments.Try again."
+		read var2
+	fi
+
+	task="$var2"
+
+#taking the output to the .task file
+echo "$task" >> "/home/ubuntu/.tasks.sh"
+echo "Task added: $task"
+}
+#Complete function
+complete() {
+	if [[ $# -ne 2 ]]; then
+		echo "Must provide a description for the task to remove. Try again."
+		read var2
+	fi
+
+	task="$var"
+
+	#remove task from .tasks file
+	if grep -q "$task" "/home/ubuntu/.tasks.sh"; then
+		sed -i "/$task/d" "/home/ubuntu/.tasks.sh"
+		echo "Task completed"
+	else
+		echo "Task not found"
+	fi
+}
+
+#View function
+view(){
+if [[ -f "/home/ubuntu/.tasks.sh" ]]; then
+	echo "Here are your tasks"
+	cat "/home/ubuntu/.tasks.sh"
+else
+	echo "Tasks not found"
+fi
+}
+
+#View clear
+clear(){
+	read char1
+	echo "Do you want to remove all tasks? (enter y / n)"
+	if [[ "char" == "y" ]]; then
+		> "/home/ubuntu/.tasks.sh"
+	elif [[ "char" = "n" ]]; then
+		echo user_guide
+	else
+		echo "Please enter a valid input"
+	fi
+}
+
+#Check if the first argument is given
+if [ -z "$var1" ]; then
+	echo "Invalid argument"
+	user_guide
+	exit 1
+fi
+
+case "$var1" in
+	add)
+		if [[ -z "$var2" ]]; then
+			echo "Error: no task description for add."
+			user_guide
+			exit 1
+		else
+			add
+			echo "Adding task $var2"
+		fi
+		;;
+	complete)
+		if [[ -z "$var2" ]]; then
+                        echo "Error: no task description for complete."
+			user_guide
+                        exit 1
+                else
+			complete
+
+                        echo "Marking task as complete: $var2"
+                fi
+                ;;
+	view)
+		echo "Viewing tasks"
+		view
+		;;
+	clear)
+		echo "Clearing all tasks"
+		clear
+		;;
+	help)
+		user_guide
+		exit 1
+		;;
+	*)
+		echo "Invalid argument"
+		user_guide
+		exit 1
+		;;
+esac
+
