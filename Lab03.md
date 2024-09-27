@@ -52,12 +52,12 @@ Verify that `roll` made it to your GitHub repository for this course and is in y
 ## Part 5 Answers
 
 1. PATH = echo $PATH
-2. To set condition to `true`, I need to make sure I have/create a directory. I called mine 'scripts'.
-3. Command(s): mkdir ~/scripts
-4. PATH = /home/ubuntu/OS_CGreen/scripts:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin 
-   - Difference: 'scripts' was added in the path.
-5. Command(s): cp ~/roll ~/scripts/
-6. Commands & modification explanations: chmod +x ~/scripts/roll
+2. To set condition to `true`, I need to make sure I have/create a directory. Then, add it to ~/.profile to make it true.
+3. Command(s): export PATH="$HOME/roll:$PATH"
+4. PATH = /home/ubuntu/roll:/home/ubuntu/Lab03:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+   - Difference: 'roll' was added in the path.
+5. Command(s): cp ~/roll ~/.profile/
+6. Commands & modification explanations: chmod +x ~/profile/roll
 7. Script permission breakdown
    - User
       - must be: The user/owner
