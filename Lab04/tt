@@ -5,7 +5,7 @@ var2=$2
 
 #Create User guide
 user_guide() {
-	echo "Taks Tracker User Guide:"
+	echo "Task Tracker User Guide:"
 	echo "Usage: ./tt [add, complete, view, clear, help]"
 	echo "Here are the actions: "
 	echo "add : Adds a task. Needs a task description."
@@ -13,9 +13,9 @@ user_guide() {
 }
 
 #first function for add
-add() {
+add_task() {
 	if [[ $# -ne 2 ]]; then
-		echo "Invalid arguments. Must have two arguments.Try again."
+		echo "Invalid arguments. Must have two arguments. Try again."
 		read var2
 	fi
 
@@ -26,7 +26,7 @@ echo "$task" >> "/home/ubuntu/.tasks.sh"
 echo "Task added: $task"
 }
 #Complete function
-complete() {
+complete_task() {
 	if [[ $# -ne 2 ]]; then
 		echo "Must provide a description for the task to remove. Try again."
 		read var2
@@ -44,7 +44,7 @@ complete() {
 }
 
 #View function
-view(){
+view_task(){
 if [[ -f "/home/ubuntu/.tasks.sh" ]]; then
 	echo "Here are your tasks"
 	cat "/home/ubuntu/.tasks.sh"
@@ -55,12 +55,13 @@ fi
 
 #View clear
 clear(){
-	read char1
-	echo "Do you want to remove all tasks? (enter y / n)"
-	if [[ "char" == "y" ]]; then
-		> "/home/ubuntu/.tasks.sh"
-	elif [[ "char" = "n" ]]; then
-		echo user_guide
+	
+	read -p "Do you want to remove all tasks? (enter y / n): " char1
+	if [[ "char1" == "y" ]]; then
+		rm -f "/home/ubuntu/.tasks.sh"
+		echo "Tasks have been cleared."
+	elif [[ "char1" == "n" ]]; then
+		echo "Cancelled clear action"
 	else
 		echo "Please enter a valid input"
 	fi
@@ -80,8 +81,8 @@ case "$var1" in
 			user_guide
 			exit 1
 		else
-			add
-			echo "Adding task $var2"
+			add_task "$var2"
+			#echo "Adding task $var2"
 		fi
 		;;
 	complete)
@@ -90,14 +91,14 @@ case "$var1" in
 			user_guide
                         exit 1
                 else
-			complete
+			complete_task "$var2"
 
                         echo "Marking task as complete: $var2"
                 fi
                 ;;
 	view)
 		echo "Viewing tasks"
-		view
+		view_task
 		;;
 	clear)
 		echo "Clearing all tasks"
