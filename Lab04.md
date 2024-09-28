@@ -88,5 +88,5 @@ Example of using `help`
 
 Note here *what* you did to the script for the extra credit and provide additional demonstrations.
 
-*I made functions for add, complete, view, clear, and help
-*I added the action 'super-show' so that every user could write tasks and store them in .tasks
+- I made functions for add, complete, view, clear, and help.
+- I added the action 'super-show' so that every user could write tasks and store them in .tasks.
