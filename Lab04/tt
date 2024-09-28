@@ -5,14 +5,14 @@ var2=$2
 
 #Create User guide
 user_guide() {
-	echo "Task Tracker User Guide:"
+	echo "***Task Tracker User Guide***"
 	echo "Usage: ./tt [add, complete, view, clear, help] [task description]"
 	echo "Here are the actions: "
-	echo "add : Adds a task. Needs a task description."
-	echo "complete : Will mark a task as complete. This also needs a task description"
-	echo "view : View all tasks"
-	echo "clear : Clears all tasks"
-	echo "help : Displays this user guide"
+	echo "add: Adds a task. Needs a task description."
+	echo "complete: Will mark a task as complete. This also needs a task description."
+	echo "view: View all tasks."
+	echo "clear: Clears all tasks."
+	echo "help: Displays this user guide."
 }
 
 #first function for add
@@ -28,45 +28,44 @@ add_task() {
 	task="$var2"
 
 #taking the output to the .task file
-echo "$task" >> "/home/ubuntu/.tasks"
-echo "Task added: $task"
+echo "$task" >> "$HOME/.tasks"
+echo "Task added"
 }
+
 #Complete function
 complete_task(){
+      if [[ -z "$1" ]]; then
+        echo "Error: Must provide task description"
+        read -p "Enter the task description to complete: " taskDescription
+    else
+        taskDescription="$1"
+    fi
 
-	if [[ -z "$var1" ]]; then
-                echo "Error: no task description for complete."
-		read -p "Enter the task description you want to complete: " taskDescription
-	else
-		taskDescription="$var1"
-	fi
-
-	taskDescription="$(echo "$taskDescription" | xargs)"
-	#remove task from .tasks file
-	if grep -Fxq "$taskDescription" "/home/ubuntu/.tasks"; then
-	       	sed -i.bak "/^${taskDescription}$/d" "/home/ubuntu/.tasks"
-		echo "Task completed"
-	else
-		echo "Task not found"
-	fi
+    # Remove task from .tasks
+    if grep -Fxq "$taskDescription" "$HOME/.tasks"; then
+        sed -i "/^${taskDescription}$/d" "$HOME/.tasks"
+        echo "Task completed"
+    else
+        echo "Task not found"
+    fi
 }
 
 #View function
 view_task(){
-if [[ -f "/home/ubuntu/.tasks" ]]; then
+if [[ -f "$HOME/.tasks" ]]; then
 	echo "Here are your tasks: "
-	cat "/home/ubuntu/.tasks"
+	cat "$HOME/.tasks"
 else
 	echo "Tasks not found"
 fi
 }
 
-#View clear
+#Clear function
 clear_task(){
 	
 	read -p "Do you want to remove all tasks? (enter y / n): " char1
 	if [[ "$char1" == "y" ]]; then
-		rm -f "/home/ubuntu/.tasks"
+		rm -f "$HOME/.tasks"
 		echo "Tasks have been cleared."
 	elif [[ "$char1" == "n" ]]; then
 		echo "Cancelled clear action"
@@ -98,6 +97,14 @@ case "$var1" in
 	help)
 		user_guide
 		;;
+	super-show)
+		echo "Showing tasks from every user: "
+		find /home -name ".tasks" | while read -r files; do
+		echo "Tasks in the file: "
+		cat "$files"
+		echo ""
+	done
+	;;
 	*)
 		echo "Invalid argument"
 		user_guide
