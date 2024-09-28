@@ -6,37 +6,45 @@ var2=$2
 #Create User guide
 user_guide() {
 	echo "Task Tracker User Guide:"
-	echo "Usage: ./tt [add, complete, view, clear, help]"
+	echo "Usage: ./tt [add, complete, view, clear, help] [task description]"
 	echo "Here are the actions: "
 	echo "add : Adds a task. Needs a task description."
-
+	echo "complete : Will mark a task as complete. This also needs a task description"
+	echo "view : View all tasks"
+	echo "clear : Clears all tasks"
+	echo "help : Displays this user guide"
 }
 
 #first function for add
 add_task() {
-	if [[ $# -ne 2 ]]; then
-		echo "Invalid arguments. Must have two arguments. Try again."
-		read var2
+
+
+	if [[ -z "$1" ]]; then
+		read -p "Enter a description: " taskDescription
+	else
+		taskDescription="$var1"
 	fi
 
 	task="$var2"
 
 #taking the output to the .task file
-echo "$task" >> "/home/ubuntu/.tasks.sh"
+echo "$task" >> "/home/ubuntu/.tasks"
 echo "Task added: $task"
 }
 #Complete function
-complete_task() {
-	if [[ $# -ne 2 ]]; then
-		echo "Must provide a description for the task to remove. Try again."
-		read var2
+complete_task(){
+
+	if [[ -z "$var1" ]]; then
+                echo "Error: no task description for complete."
+		read -p "Enter the task description you want to complete: " taskDescription
+	else
+		taskDescription="$var1"
 	fi
 
-	task="$var"
-
+	taskDescription="$(echo "$taskDescription" | xargs)"
 	#remove task from .tasks file
-	if grep -q "$task" "/home/ubuntu/.tasks.sh"; then
-		sed -i "/$task/d" "/home/ubuntu/.tasks.sh"
+	if grep -Fxq "$taskDescription" "/home/ubuntu/.tasks"; then
+	       	sed -i.bak "/^${taskDescription}$/d" "/home/ubuntu/.tasks"
 		echo "Task completed"
 	else
 		echo "Task not found"
@@ -45,22 +53,22 @@ complete_task() {
 
 #View function
 view_task(){
-if [[ -f "/home/ubuntu/.tasks.sh" ]]; then
-	echo "Here are your tasks"
-	cat "/home/ubuntu/.tasks.sh"
+if [[ -f "/home/ubuntu/.tasks" ]]; then
+	echo "Here are your tasks: "
+	cat "/home/ubuntu/.tasks"
 else
 	echo "Tasks not found"
 fi
 }
 
 #View clear
-clear(){
+clear_task(){
 	
 	read -p "Do you want to remove all tasks? (enter y / n): " char1
-	if [[ "char1" == "y" ]]; then
-		rm -f "/home/ubuntu/.tasks.sh"
+	if [[ "$char1" == "y" ]]; then
+		rm -f "/home/ubuntu/.tasks"
 		echo "Tasks have been cleared."
-	elif [[ "char1" == "n" ]]; then
+	elif [[ "$char1" == "n" ]]; then
 		echo "Cancelled clear action"
 	else
 		echo "Please enter a valid input"
@@ -76,42 +84,23 @@ fi
 
 case "$var1" in
 	add)
-		if [[ -z "$var2" ]]; then
-			echo "Error: no task description for add."
-			user_guide
-			exit 1
-		else
-			add_task "$var2"
-			#echo "Adding task $var2"
-		fi
+		add_task "$var2"
 		;;
 	complete)
-		if [[ -z "$var2" ]]; then
-                        echo "Error: no task description for complete."
-			user_guide
-                        exit 1
-                else
-			complete_task "$var2"
-
-                        echo "Marking task as complete: $var2"
-                fi
+		complete_task "$var2"
                 ;;
 	view)
-		echo "Viewing tasks"
 		view_task
 		;;
 	clear)
-		echo "Clearing all tasks"
-		clear
+		clear_task
 		;;
 	help)
 		user_guide
-		exit 1
 		;;
 	*)
 		echo "Invalid argument"
 		user_guide
-		exit 1
 		;;
 esac
 
