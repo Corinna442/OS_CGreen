@@ -4,9 +4,15 @@ echo "Please enter a filename: "
 read filename
 
 if [[ -f $filename ]]; then
+	#part 1
 	echo "File does exist"
 	sort $filename | uniq > clean1.txt
 	echo "contents have been sorted and removed duplicate entries"
+
+        grep -E '^[A-Za-z0-9]' clean1.txt > clean2.txt
+        echo "Entries are matched (letters and digits)"
+
+
 else
 	echo "File does not exist"
 	exit 1
