@@ -9,13 +9,6 @@ if [[ -f $filename ]]; then
 	sort $filename | uniq > clean1.txt
 	echo "contents have been sorted and removed duplicate entries"
 
-        grep -E '^[A-Za-z0-9]' clean1.txt > clean2.txt
-        echo "Entries are matched (letters and digits)"
-
-	 grep -Pv '\W_{2,}' clean2.txt > clean3.txt
-        echo "Content matched that does not contain consecutive non-alphanumeric characters"
-
-
 
 else
 	echo "File does not exist"
