@@ -20,9 +20,6 @@ if [[ -f $filename ]]; then
 	#part 4
 	grep -E '@[A-Za-z0-9]+\.(com|org|net)$' clean3.txt > clean4.txt
 	echo "Content matched valid domain name"
-
-
-
 else
 	echo "File does not exist"
 	exit 1
