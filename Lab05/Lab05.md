@@ -11,13 +11,6 @@ Make sure the following files are in your GitHub repository
 
 ## Part 2 Answers
 
-1. `place your sed commands between backtick characters`:
-2. `so that they are pretty and readable in markdown`:
-3. `replace these examples with your commands` 
-4. `do this for rest of commands in lab`:
-5.
-6. 
-
 1. 'sed -i 's/<\/[^>]*//g' sedfile.md'
 2. 'sed -i 's/[[:space:]]*<li>/-/g' sedfile.md'
 3. 'sed -i 's/^[[:space:]]*<li>/\-/g' sedfile.md'
