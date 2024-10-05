@@ -25,10 +25,3 @@ Make sure the following files are in your GitHub repository
 3. `awk '/wright\.edu/ {print $2 ", " $1 ": " $3}' records.txt`
 4. `awk '/wright\.edu/ && $6 == 1234 {print $2 " Last favorite number is: " $4}' records.txt`
 5. `awk '{$6 = "N0T@PL@!NP@$$W0RD"; print}' records.txt > updaterecords.txt`
-
-## Extra Credit - Remove this if not doing
-
-1. Source: 
-    - Regular Expression Pattern: 
-2. Pattern explanation:
-3. Verify `validator2` is in your GitHub repository
