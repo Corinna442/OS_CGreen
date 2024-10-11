@@ -1,7 +1,7 @@
 ## Lab 06
 
-- Name:
-- Email
+- Name: Corinna Green
+- Email: green.442@wright.edu
 
 ## Part 2 - Retrospective
 

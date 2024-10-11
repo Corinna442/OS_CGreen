@@ -34,10 +34,19 @@ while getopts ":hf:r:" opt; do
 done
 
 #creating fileName to access directly using first OPTIND argument
-fileName="${@:$OPTIND:1}"
+fileName="${@:$OPTIND:2}"
+
+#error checking
+if [ -z "$fileName" ] || [ ! -e "$fileName" ]; then
+	echo "User must provide valid filename"
+	printHelp
+fi
+
 
 #Create the new name using find and replace. sed -E is used for pattern matching
-newFileName=$(echo "filename" | sed -E "s/${findFile}/${replaceFile}/g")
-		
+newfilename=$(echo "$fileName" | sed -E "s/${findFile}/${replaceFile}/g")
 
+#Renames the old file with the new one
+mv "$fileName" "$newfilename"
+echo "Renamed \"$fileName\" to \"$newfilename\""
 
