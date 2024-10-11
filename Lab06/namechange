@@ -35,6 +35,9 @@ done
 
 #creating fileName to access directly using first OPTIND argument
 fileName="${@:$OPTIND:1}"
+
+#Create the new name using find and replace. sed -E is used for pattern matching
+newFileName=$(echo "filename" | sed -E "s/${findFile}/${replaceFile}/g")
 		
 
 
