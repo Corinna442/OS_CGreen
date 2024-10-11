@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 #The printHelp() function to print out
-printHelp () {
+printHelp() {
 	echo "Usage: namechange -f find -r replace "string to modify""
 	echo " -f The text to find in the filename"
 	echo " -r The replacement text for the new filename"
@@ -47,6 +47,9 @@ fi
 newfilename=$(echo "$fileName" | sed -E "s/${findFile}/${replaceFile}/g")
 
 #Renames the old file with the new one
-mv "$fileName" "$newfilename"
-echo "Renamed \"$fileName\" to \"$newfilename\""
 
+if mv "$fileName" "$newfilename"; then
+echo "Renamed \"$fileName\" to \"$newfilename\""
+else
+	echo "Error: failed to rename file"
+fi
