@@ -1,0 +1,57 @@
+#!/usr/bin/bash
+
+#The printHelp() function to print out
+printHelp() {
+        echo "Usage: namechange -f find -r replace "string to modify""
+        echo " -f The text to find in the filename"
+        echo " -r The replacement text for the new filename"
+}
+
+#Initialize String variables to find and replace files
+findFile=""
+replaceFile=""
+
+#while loop that iterates through the cases using getopts. OPTSTRING is :hf:r:. Will store the current option in opt.
+while getopts ":hf:r:" opt; do
+        case $opt in
+                h)      #printHelp() is called, thus outputted
+                        printHelp
+                        ;;
+                f)
+                        #OPTARG holds the argument associated with findFile
+                        findFile=$OPTARG
+                        ;;
+                r)
+                        #OPTARG holds the argument associated with replaceFile
+                        replaceFile=$OPTARG
+                        ;;
+                \?)
+                        #if there is an unrecognized option
+                        echo "Invalid option"
+                        printHelp
+                        ;;
+        esac
+done
+
+#creating fileName to access directly using first OPTIND argument
+fileName="${@:$OPTIND:2}"
+
+#error checking
+if [ -z "$fileName" ] || [ ! -e "$fileName" ]; then
+        echo "User must provide valid filename"
+        printHelp
+fi
+
+for filename in "$@"; do
+
+#Create the new name using find and replace. sed -E is used for pattern matching
+newfilename=$(echo "$fileName" | sed -E "s/${findFile}/${replaceFile}/g")
+
+#Renames the old file with the new one
+#Error checking
+if mv "$fileName" "$newfilename"; then
+echo "Renamed \"$fileName\" to \"$newfilename\""
+else
+        echo "Error: failed to rename file"
+fi
+done
