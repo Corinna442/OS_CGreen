@@ -5,39 +5,34 @@
 
 ## Part 2 - Retrospective
 
-1.
-2.
-3.
+1. Getopts is like a switch statement on steriods. It defines which options the script will accept. 
+2. I got stuck on the error: mv: cannot stat '': No such file or directory. I basically had the file name be called fileName and accidentally forgot to put an uppercase N for the rest of the variables.
+3. I would include the possibility of also opening the file after changing the name to make sure everything stayed.
 
 ## Part 3 - namechange Usage Guide
 
-THIS SHOULD ALL BE REMOVED AND REPLACED WITH ONLY YOUR USAGE GUIDE TEXT
-
-Examples of script usage and output. This should be enough info that  
-you can hand this and the script to someone not in this course and they  
-would be able to understand what your script does and how to use it.
-
-Use good markdown so that this documentation is pretty and clean on GitHub.
-
-Bellow is kind of how I would format things
+Usage: namechange -f find -r replace "string to modify"
+ `-f The text to find in the filename`
+ `-r The replacement text for the new filename`
 
 ### What it is
 
-Describe your script in plain English, nothing too technical.  Think about this as describing what you made over the dinner table.
+This script finds and replaces file names using getopts and sed. If you need help, it will print out a usage guide to tell you what commands/options using -h. It will also display error messages if you put in a nonexistant filename or command. 
 
 ### How to run it
 
 If someone wanted to downloaded your script, what steps would they take to have their own copy that they could run
-1. Numbers followed by a space
-2. Create numeric lists
-3. Don't forget `code snips` can go in backticks.
+1. `First, make a file named namechange using vim, then copy and paste my script.`
+2. `Create error files for this script to change such as pic.jgp or foo.txt.`
+3. `Run it using this format: bash ./namechange -f old -r new old.txt`
 
 ### Examples
 
 ```
-Two examples using your script to rename an existing file
-By using the triple quotes, you can enclose a block of code
-And code blocks look very professional
+`Example 1: Run it using this format: ./namechange -f old -r new old.txt`
+`This will chnage old.txt to new.txt`
+`Example 2: change foo.txt to foobar.txt: ./namechange -f foo -r foobar foo.txt`
+
 ```
 
 ## Bulk Name Changer Usage Guide - Remove if not doing extra credit
