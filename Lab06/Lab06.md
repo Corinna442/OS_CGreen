@@ -39,8 +39,7 @@ Example 2: change `foo.txt` to `foobar.txt`: `./namechange -f foo -r foobar foo.
 
 ## Bulk Name Changer Usage Guide - Remove if not doing extra credit
 
-Examples of script usage and output. This should be enough info that  
-you can hand this and the script to someone not in this course and they  
-would be able to understand what your script does and how to use it.
-
-Use good markdown so that this documentation it is pretty and clean on GitHub.
+Example 1: `./bulkrenamer -f .jgp -r .jpg *.jgp`
+This replaces all .jgp files to .jpg files.
+Example 2: `./bulkrenamer -f ' ' -r '-' *\ *`
+This replaces all spaces with dashes.

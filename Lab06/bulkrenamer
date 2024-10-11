@@ -42,7 +42,7 @@ if [ -z "$fileName" ] || [ ! -e "$fileName" ]; then
         printHelp
 fi
 
-for filename in "$@"; do
+for fileName in "$@"; do
 
 #Create the new name using find and replace. sed -E is used for pattern matching
 newfilename=$(echo "$fileName" | sed -E "s/${findFile}/${replaceFile}/g")
