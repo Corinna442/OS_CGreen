@@ -6,16 +6,16 @@
 ## System Discovery
 
 1. CPU info:
-    - CPU brand:
-    - Number of cores:
-    - Number of logical cores:
+    - CPU brand: AMD
+    - Number of cores: 6
+    - Number of logical cores: 12
 2. GPU info:
     - Integrated GPU info:
-    - Dedicated GPU info: 
-    - Link to driver software for GPU: 
+    - Dedicated GPU info: 360/512 MB
+    - Link to driver software for GPU: https://www.amd.com/en/support/download/drivers.html
 3. Memory info:
-    - Physical memory (RAM) size (in GB):
-    - Virtual memory size (in GB):
+    - Physical memory (RAM) size (in GB): 15.3 GB
+    - Virtual memory size (in GB): 31.1 GB
 4. Storage info (repeat for each disk attached to your system): 
     - Disk 1 type:
     - Disk 1 manufacturer and model:
