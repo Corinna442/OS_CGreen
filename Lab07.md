@@ -37,7 +37,7 @@
 1. Virtual Machine Manager:
     - Software & version: VirtualBox Graphical User Interface Version 7.1.4 r165100 (Qt6.5.3)
     - Link to software URL: https://www.virtualbox.org/wiki/Downloads
-    - ![screenshot of installed & running software](RELATIVE_PATH_TO_SCREENSHOT_IN_FOLDER)
+    - ![screenshot of installed & running software](Screenshot 2024-10-25 162315.png)
 
 2. Guest OS information: 
     - Linux distribution selected: Ubuntu
@@ -51,8 +51,8 @@
 4. Guest OS Installation:
     - Note steps completed to install and then run the guest operating system
     - First download the OS, I chose Ubuntu 24.04.1 LTS. Then when the VB comes up, click on the option that says `new`. You can give it whatever name you want, I named mine `CEG2350`. Find where you want to store the ISO message from `Other`. Click `Skip Unattended Installation`. Assign some hardware for the VM, I gave mine 4 GB of RAM and 4 CPUs. Next, give it some storage, I gave mine 45 GB (minimum requirement is 35 GB). Verify the settings are set up properly and click `Finish`. On the new page, click on the VM you just created, it should be highlight blue. Click `Start`. From here, it should be starting up the VM from the OS. Select install and it may take some time. Then proceed with the setting questions given on your new VM!
-    - ![![Screenshot 2024-10-25 160312](https://github.com/user-attachments/assets/c192d5ac-dcb8-463b-be49-efcbd4926a5c)
-](RELATIVE_PATH_TO_SCREENSHOT_IN_FOLDER)
+    - ![![Screenshot 2024-10-25 160312]![Screenshot 2024-10-25 160312](https://github.com/user-attachments/assets/813aac66-8e38-436b-9d58-2a69df8952d2)
+)
 
 ## Part 3 - Virtual Playground:
 
