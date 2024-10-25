@@ -17,20 +17,20 @@
     - Physical memory (RAM) size (in GB): 15.3 GB
     - Virtual memory size (in GB): 31.1 GB
 4. Storage info (repeat for each disk attached to your system): 
-    - Disk 1 type:
-    - Disk 1 manufacturer and model:
-    - Total disk 1 size (in GB):
+    - Disk 1 type: SDD
+    - Disk 1 manufacturer and model: (Standard disk drives) and  SAMSUNG MZVLQ256HBJD-00BH1
+    - Total disk 1 size (in GB): 239 GB
 5. Primary partition info:
-    - Primary partition mount point:
-    - Remaining space on primary partition (in GB):
-    - Filesystem on primary partition:
+    - Primary partition mount point: C:\
+    - Remaining space on primary partition (in GB): 19.2 GB
+    - Filesystem on primary partition: NTFS
 6. BIOS / UEFI info: 
-    - BIOS or UEFI version: 
-    - How to access your BIOS / UEFI:
+    - BIOS or UEFI version: UEFI: F.14
+    - How to access your BIOS / UEFI: Go to settings and click 'restart' under 'Advanced setup'. Then clikc 'troubleshoot', 'Advanced options', 'UEFI firmware settings', and 'restart'. This restarts the PC into UEFI interface.
 7. Kernel / OS info:
-    - Bootloader software on your system: 
-    - Kernel version of your operating system:
-    - Operating System name & version: 
+    - Bootloader software on your system: Windows Boot Manager
+    - Kernel version of your operating system: 10.0.22621.4317
+    - Operating System name & version: 'Microsoft Windows 11 Home' and '10.0.22621 Build 22621'
 
 ## Part 2 - Virtualize the Machine
 
