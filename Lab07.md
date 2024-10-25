@@ -10,7 +10,7 @@
     - Number of cores: 6
     - Number of logical cores: 12
 2. GPU info:
-    - Integrated GPU info: None?
+    - Integrated GPU info: None
     - Dedicated GPU info: 360/512 MB
     - Link to driver software for GPU: https://www.amd.com/en/support/download/drivers.html
 3. Memory info:
@@ -59,4 +59,4 @@
 
 1. How to change your desktop background in your VM: Right click on an empty area of your desktop and choose `Change Background`.
 2. How to install VSCode in your VM: Go to the terminal in your VM by typing `Ctrl-Shift-T`. Type this command: `sudo snap install --classic code`. This installs the snap package of Visual Studio Code. To launch it, enter `code`.
-4. How to connect to your AWS instance from your VM using `ssh`: 
+4. How to connect to your AWS instance from your VM using `ssh`: First transfer your pem file to your Ubuntu VM. Then change permissions using chmod 400 /path/to/ssh/. Then connect to your AWS instance using: ssh -i ./labuser.pem ubuntu@98.82.48.190 (this is mine).
