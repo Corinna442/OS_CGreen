@@ -57,6 +57,6 @@
 
 ## Part 3 - Virtual Playground:
 
-1. How to change your desktop background in your VM:
-2. How to install VSCode in your VM:
-3. How to connect to your AWS instance from your VM using `ssh`:
+1. How to change your desktop background in your VM: Right click on an empty area of your desktop and choose `Change Background`.
+2. How to install VSCode in your VM: Go to the terminal in your VM by typing `Ctrl-Shift-T`. Type this command: `sudo snap install --classic code`. This installs the snap package of Visual Studio Code. To launch it, enter `code`.
+4. How to connect to your AWS instance from your VM using `ssh`: 
