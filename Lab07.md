@@ -10,7 +10,7 @@
     - Number of cores: 6
     - Number of logical cores: 12
 2. GPU info:
-    - Integrated GPU info:
+    - Integrated GPU info: None?
     - Dedicated GPU info: 360/512 MB
     - Link to driver software for GPU: https://www.amd.com/en/support/download/drivers.html
 3. Memory info:
@@ -35,18 +35,18 @@
 ## Part 2 - Virtualize the Machine
 
 1. Virtual Machine Manager:
-    - Software & version:
-    - Link to software URL: 
+    - Software & version: VirtualBox Graphical User Interface Version 7.1.4 r165100 (Qt6.5.3)
+    - Link to software URL: https://www.virtualbox.org/wiki/Downloads
     - ![screenshot of installed & running software](RELATIVE_PATH_TO_SCREENSHOT_IN_FOLDER)
 
 2. Guest OS information: 
-    - Linux distribution selected:
-    - URL downloaded from: 
+    - Linux distribution selected: Ubuntu
+    - URL downloaded from: https://ubuntu.com/download/desktop
 
 3. Guest VM resource allocations:
-    - Number of Virtual CPUs:
-    - RAM: 
-    - Hard disk space: 
+    - Number of Virtual CPUs: 4
+    - RAM: 4096 MB
+    - Hard disk space: 45.00 GB
 
 4. Guest OS Installation:
     - Note steps completed to install and then run the guest operating system
