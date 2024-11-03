@@ -149,9 +149,9 @@ list here
    
 ## Part 4
 
-1. Commands used:
-2. Line you added to `/etc/fstab`:
-3. How did you confirm that the mount point changed? (Commands used or explain process):
+1. Commands used: `sudo cp /etc/fstab /etc/fstab.bak`
+2. Line you added to `/etc/fstab`: `/dev/xvdb1  /mnt/newworld  ext4  defaults  0  2`
+3. How did you confirm that the mount point changed? (Commands used or explain process): `sudo mount -a`
 4. **If you restored `/etc/fstab`**, write here why you did not feel comfortable leaving your changes in place
 
 
