@@ -106,20 +106,46 @@ Number  Start (sector)    End (sector)  Size       Code  Name
 
 ## Part 3
 
-1. Commands used:
-2. Commands used:
+1. Commands used: `sudo mkfs.ext4 /dev/xvdb1`
+2. Commands used: `sudo blkid`
 ```
-output here
+`mke2fs 1.46.5 (30-Dec-2021)
+Creating filesystem with 1048315 4k blocks and 262144 inodes
+Filesystem UUID: 8dec3e9f-4c51-4377-b0a7-b8fb37771c14
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Allocating group tables: done
+Writing inode tables: done
+Creating journal (16384 blocks): done
+Writing superblocks and filesystem accounting information: done`
+
+`/dev/xvda1: LABEL="cloudimg-rootfs" UUID="b78b2f9f-3a08-427a-ad4e-4a04f235761c" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="5685b7d3-4911-4237-9405-e73d2d78ca3e"
+/dev/xvda15: LABEL_FATBOOT="UEFI" LABEL="UEFI" UUID="4B1C-F903" BLOCK_SIZE="512" TYPE="vfat" PARTUUID="1dcb7fe9-f679-4d8b-afbe-2f4f444c7095"
+/dev/loop1: TYPE="squashfs"
+/dev/loop8: TYPE="squashfs"
+/dev/loop6: TYPE="squashfs"
+/dev/loop4: TYPE="squashfs"
+/dev/loop2: TYPE="squashfs"
+/dev/loop0: TYPE="squashfs"
+/dev/loop9: TYPE="squashfs"
+/dev/loop7: TYPE="squashfs"
+/dev/loop5: TYPE="squashfs"
+/dev/loop3: TYPE="squashfs"
+/dev/loop10: TYPE="squashfs"
+/dev/xvda14: PARTUUID="ca8e99c4-f383-4d1e-8cda-a1023a3a49f4"
+/dev/xvdb1: UUID="8dec3e9f-4c51-4377-b0a7-b8fb37771c14" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="Linux filesystem" PARTUUID="7f320f69-f5e5-4caa-9116-97f064b21f61"`
 ```
-3. Commands used:
-4. Commands used:
+3. Commands used: `sudo mkdir /mnt/newworld`
+4. Commands used: `sudo mount /dev/xvdb1 /mnt/newworld`
 5. Contents of `/mnt/newworld`:
 ```
 list here
+`lost+found exampledir examplefile.txt`
 ```
-6. Commands used:
+6. Commands used: `sudo umount /mnt/newworld`
 7. When can I interact with files on the filesystem on the partition in `xvdb`?
-   - Answer:
+   - Answer: Only when the partition is mounted.
    
 ## Part 4
 
