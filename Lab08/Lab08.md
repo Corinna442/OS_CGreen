@@ -157,16 +157,16 @@ list here
 
 ## Part 5
 
-1. Commands used:
+1. Commands used: `cd /mnt/newworld` , `sudo touch secret1.txt` , `sudo touch secret2.txt` , `sudo chmod 666 secret1.txt` , sudo chmod 666 secret2.txt`
 2. What does the `strings` command do?
-   - Answer:
-3. Write a short explanation of what you saw in `strings` output:
-4. Commands used:
-5. Is the secret you deleted still showing up in the `strings` output?
+   - Answer: The `strings` command returns the string characters into files. It determines the contents and extracts text from binary files (https://www.javatpoint.com/linux-strings-command)
+3. Write a short explanation of what you saw in `strings` output: strings outputted my message in the file 
+4. Commands used: sudo rm secret1.txt
+5. Is the secret you deleted still showing up in the `strings` output? Yes
 
 ### Report: How to Permanently Delete a File
 
-**Write your report here**
+**I used the command `sudo shred -u secret2.txt`. The `shred` command securly deletes the contents of a file on the mounted partition. The `-u` flag makes sure to overwrite the file and delete it.**
 
 ## Extra Credit Answers:
 
